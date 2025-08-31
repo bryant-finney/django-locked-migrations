@@ -1,0 +1,61 @@
+#!/usr/bin/env -S uv run --script --active
+# https://docs.astral.sh/uv/guides/scripts/#using-a-shebang-to-create-an-executable-file
+"""Create a badge to display the project's `pylint` score."""
+
+import bisect
+import re
+from pathlib import Path
+from typing import Annotated
+
+import anybadge.cli  # pyright: ignore[reportMissingTypeStubs]
+import pylint.lint
+import typer
+
+DEFAULT_PATH_BADGE = Path('docs/reports/pylint.svg')
+DEFAULT_PATH_LINT = [Path('src')]
+
+app = typer.Typer(rich_markup_mode='rich')
+colormap = {'red': 7, 'orange': 8, 'yellow': 9, 'green': 10}
+regex = re.compile(r'Your code has been rated at (?P<score>[0-9.]+)')
+
+
+def callback_paths(ctx: typer.Context, value: list[Path] | None) -> list[Path]:
+    """Ensure all paths exist."""
+    if ctx.resilient_parsing or not value:
+        return value or DEFAULT_PATH_LINT
+
+    if invalid := [path for path in value if not path.exists()]:
+        raise typer.BadParameter('Paths do not exist:\n  ' + '\n  '.join(f'[yellow]{p}[/]' for p in invalid))
+
+    return value
+
+
+@app.command()
+def main(
+    paths: Annotated[list[Path], typer.Argument(callback=callback_paths, help='Paths to lint', metavar='PATH...')],
+    badge: Annotated[Path, typer.Option('--badge', '-b', help='Write the badge to here')] = DEFAULT_PATH_BADGE,
+) -> None:
+    """Run [blue]pylint[/] and generate a badge to show the results."""
+    run = pylint.lint.Run([str(p.absolute()) for p in paths], exit=False)
+    if (score := run.linter.generate_reports()) is None:
+        raise TypeError('Could not get pylint score')
+
+    color = list(colormap.keys())[bisect.bisect_left(list(colormap.values()), score)]
+
+    anybadge.cli.main(  # pyright: ignore[reportUnknownMemberType]
+        [
+            '--color',
+            color,
+            '--file',
+            str(badge.absolute()),
+            '--label',
+            'pylint',
+            '--overwrite',
+            '--value',
+            f'{score:.2f}/10',
+        ]
+    )
+
+
+if __name__ == '__main__':
+    app()

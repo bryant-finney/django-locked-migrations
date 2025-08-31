@@ -1,0 +1,195 @@
+{
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "url",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": true,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "https://",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": true,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "ref",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "~",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "pattern",
+      "color": "rgb(155, 92, 239)",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": true
+    },
+    {
+      "tag": "note",
+      "color": "#33dbb1",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": true
+    },
+    {
+      "tag": "...",
+      "color": "#33dbb1",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": true
+    },
+    {
+      "tag": "noop",
+      "color": "#33dbb1",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": true
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": ": .. todo::",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "trivy:ignore",
+      "color": "#FF8C00"
+    },
+    {
+      "tag": "tfsec:ignore",
+      "color": "#FF8C00"
+    },
+    {
+      "tag": "tflint-ignore",
+      "color": "#fec609"
+    }
+  ],
+  "cSpell.ignoreWords": [
+    "dmypy",
+    "ixin",
+    "dlsa",
+    "ftcosrt",
+    "hzys"
+  ],
+  "cSpell.words": [
+    "BLOCKLIST",
+    "collectstatic",
+    "createsuperuser",
+    "dbus",
+    "dependants",
+    "dunder",
+    "installroot",
+    "noinput",
+    "stripwarnings",
+    "sysv"
+  ],
+  "customLocalFormatters.formatters": [
+    {
+      "command": ".venv/bin/yamlfix -",
+      "languages": [
+        "yaml",
+        "github-actions-workflow"
+      ]
+    },
+    {
+      "command": "${workspaceFolder:django-locked-migrations}/.venv/bin/mdformat -",
+      "languages": [
+        "markdown"
+      ]
+    },
+    {
+      "command": ".venv/bin/taplo format -",
+      "languages": [
+        "toml"
+      ]
+    }
+  ],
+  "editor.defaultFormatter": "jkillian.custom-local-formatters",
+  "evenBetterToml.taplo.bundled": false,
+  "evenBetterToml.taplo.configFile.path": ".taplo.toml",
+  "evenBetterToml.taplo.path": ".venv/bin/taplo",
+  "mypy-type-checker.importStrategy": "fromEnvironment",
+  "mypy-type-checker.reportingScope": "workspace",
+  "mypy-type-checker.args": [
+    "--config-file=${workspaceFolder}/pyproject.toml"
+  ],
+  "shellcheck.useWorkspaceRootAsCwd": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters"
+  }
+}

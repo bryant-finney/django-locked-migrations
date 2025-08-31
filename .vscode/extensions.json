@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "aaron-bond.better-comments",
+    "charliermarsh.ruff",
+    "donjayamanne.git-extension-pack",
+    "eamodio.gitlens",
+    "hbenl.vscode-test-explorer",
+    "jkillian.custom-local-formatters",
+    "mhutchie.git-graph",
+    "ms-python.mypy-type-checker",
+    "ms-python.vscode-pylance",
+    "ms-vscode.test-adapter-converter",
+    "redhat.vscode-yaml",
+    "ryanluker.vscode-coverage-gutters",
+    "samuelcolvin.jinjahtml",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}

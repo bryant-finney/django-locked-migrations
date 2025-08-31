@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python Debugger: bin/pylint",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder:django-locked-migrations}/bin/pylint",
+      "console": "internalConsole"
+    },
+    {
+      "name": "Python Debugger: .venv/bin/pylint",
+      "args": [
+        "src"
+      ],
+      "console": "internalConsole",
+      "program": "${workspaceFolder:django-locked-migrations}/.venv/bin/pylint",
+      "request": "launch",
+      "type": "debugpy"
+    }
+  ]
+}
