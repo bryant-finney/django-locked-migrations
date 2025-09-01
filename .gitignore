@@ -73,4 +73,5 @@ __pycache__/
 
 # misc
 *.bak
+*.lock
 .*.bak

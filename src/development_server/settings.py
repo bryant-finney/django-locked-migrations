@@ -48,6 +48,7 @@ except ImportError:
 else:
     INSTALLED_APPS.append('django_extensions')
 
+INSTALLED_APPS.extend(['locked_migrations'])
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

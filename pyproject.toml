@@ -43,7 +43,7 @@ test = [
   "pytest>=8.4.1",
 ]
 
-types = []
+types = ["django-stubs>=5.2.2"]
 
 [project]
 authors = [{ email = "bryant.finney@outlook.com", name = "Bryant Finney" }]
@@ -66,6 +66,9 @@ name            = "django-locked-migrations"
 readme          = "README.md"
 requires-python = ">=3.10"
 version         = "0.0.0"
+
+[project.optional-dependencies]
+file = ["filelock>=3.19.1"]
 
 [tool.coverage.report]
 # https://coverage.readthedocs.io/en/latest/config.html#report
@@ -616,6 +619,7 @@ redefining-builtins-modules = ["six.moves", "past.builtins", "future.builtins", 
 [tool.pyright]
 enablePytestExtra = true
 exclude           = [".venv/**", "docs"]
+ignore            = ["**/.venv/**"]
 strict            = ["src", "tests"]
 typeCheckingMode  = "strict"
 

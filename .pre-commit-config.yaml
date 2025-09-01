@@ -75,7 +75,7 @@ repos:
     rev: v1.17.1
     hooks:
       - id: mypy
-        additional_dependencies: [lxml, django, django-stubs]
+        additional_dependencies: [lxml, django-stubs, filelock]
 
         # mypy sometimes encounters false positives when run on individual files (instead of the whole project)
         args: [--junit-xml, docs/reports/mypy.xml, --html-report, docs/reports/mypy-html, .]
@@ -85,7 +85,7 @@ repos:
     rev: v1.1.404
     hooks:
       - id: pyright
-        additional_dependencies: [django, django-stubs]
+        additional_dependencies: [django-stubs, filelock]
 
   - repo: https://github.com/shellcheck-py/shellcheck-py
     rev: v0.11.0.1

@@ -2,11 +2,27 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Python Debugger: bin/pylint",
-      "type": "debugpy",
+      "name": "Python Debugger: django-admin migrate",
+      "args": [
+        "migrate",
+        "--lock-backend=file",
+        "--lock-timeout=10"
+      ],
+      "console": "internalConsole",
+      "django": true,
+      "env": {
+        "DJANGO_SETTINGS_MODULE": "development_server.settings"
+      },
+      "program": "${workspaceFolder:django-locked-migrations}/.venv/bin/django-admin",
       "request": "launch",
+      "type": "debugpy"
+    },
+    {
+      "name": "Python Debugger: bin/pylint",
+      "console": "internalConsole",
       "program": "${workspaceFolder:django-locked-migrations}/bin/pylint",
-      "console": "internalConsole"
+      "request": "launch",
+      "type": "debugpy"
     },
     {
       "name": "Python Debugger: .venv/bin/pylint",

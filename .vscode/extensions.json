@@ -13,6 +13,7 @@
     "redhat.vscode-yaml",
     "ryanluker.vscode-coverage-gutters",
     "samuelcolvin.jinjahtml",
-    "streetsidesoftware.code-spell-checker"
+    "streetsidesoftware.code-spell-checker",
+    "esbenp.prettier-vscode"
   ]
 }

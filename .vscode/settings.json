@@ -180,6 +180,9 @@
     "--config-file=${workspaceFolder}/pyproject.toml"
   ],
   "shellcheck.useWorkspaceRootAsCwd": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[markdown]": {
     "editor.defaultFormatter": "jkillian.custom-local-formatters"
   },
