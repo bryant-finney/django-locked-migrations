@@ -142,6 +142,10 @@ cmd = """
 """
 help = "Test this package and report coverage"
 
+[tool.poe.tasks.test-concurrency]
+help   = "Execute the `tests.concurrency` script to spawn multiple processes to run migrations concurrently"
+script = "tests.concurrency:main"
+
 [tool.poe.tasks.test-watch]
 cmd  = "ptw --config ptw.ini"
 help = "Run tests continuously by watching for file changes"
